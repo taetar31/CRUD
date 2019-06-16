@@ -1,0 +1,45 @@
+import { InMemoryDbService } from 'angular-in-memory-web-api';
+
+export class InMemoryDataService implements InMemoryDbService {
+  createDb() {
+    const stars = [
+      {
+        name: 'Matariki',
+        id: 1
+      },
+      {
+        name: 'Poohutukawa',
+        id: 2
+      },
+      {
+        name: 'Waitii',
+        id: 3
+      },
+      {
+        name: 'Waitaa',
+        id: 4
+      },
+      {
+        name: 'Waipuna-aa-rangi',
+        id: 5
+      },
+      {
+        name: 'Tupuaanuku',
+        id: 6
+      },
+      {
+        name: 'Tupuaarangi',
+        id: 7
+      },
+      {
+        name: 'Ururangi',
+        id: 8
+      },
+      {
+        name: 'Hiwa-i-te-rangi',
+        id: 9
+      }
+  ]
+    return { stars };
+  }
+}

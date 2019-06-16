@@ -1,0 +1,22 @@
+<h2>My Stars</h2>
+<div>
+  <label>Star name:</label> <input #starsName/>
+  <button (click)="add(starsName.value); starsName.value=''">
+    Add
+  </button>
+</div>
+<ul class="stars">
+  <li *ngFor="let star of stars" (click)="onSelect(star)"
+      [class.selected]="star === selectedStars">
+    <span class="badge">{{star.id}}</span>
+    <span>{{star.name}}</span>
+    <button class="delete" (click)="delete(star); $event.StopPropagation()">x
+    </button>
+  </li>
+</ul>
+<div *ngIf="selectedStars">
+  <h2>
+    {{selectedStars.name | uppercase}} is my favourite star
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

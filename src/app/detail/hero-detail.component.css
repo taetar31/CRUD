@@ -2,10 +2,18 @@ label {
   display: inline-block;
   width: 3em;
   margin: .5em 0;
-  color: #607D8B;
+  color: #00C957;
   font-weight: bold;
+
 }
 
+label {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+h2 {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
 input {
   height: 2em;
   font-size: 1em;
@@ -19,8 +27,7 @@ button {
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
-  cursor: pointer;
-  cursor: hand;
+  cursor: pointer, hand;
 }
 
 button:hover {

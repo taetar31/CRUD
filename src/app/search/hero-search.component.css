@@ -7,14 +7,19 @@
   padding: 5px;
   background-color: white;
   cursor: pointer;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .search-result:hover {
   color: #eee;
-  background-color: #607D8B;
+  background-color: #e0eee4;
 }
 
 #search-box {
   width: 200px;
   height: 20px;
+}
+
+h4 {
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }

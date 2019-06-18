@@ -3,36 +3,39 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AppRoutingModule } from './app-routing.module';
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+import { HeroDatabaseService } from './hero-database.service';
+
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard.component';
-import { StarsComponent } from './stars.component';
-import { StarsDetailComponent } from './stars-detail.component';
-import { StarsService } from './stars.service';
-import { StarsSearchComponent } from './stars-search.component';
-import {RouterModule} from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+// Importing Heroes components
+import { HeroesComponent } from './hero/heroes.component';
+import { HeroService } from './hero.service';
+import { HeroSearchComponent } from './search/hero-search.component';
+import { HeroDetailComponent} from "./detail/hero-detail.component";
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
-    RouterModule,
+    HeroDetailComponent,
+    InMemoryWebApiModule.forRoot(HeroDatabaseService),
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
     DashboardComponent,
-    StarsDetailComponent,
-    StarsComponent,
-    StarsSearchComponent
+    HeroesComponent,
+    HeroSearchComponent
   ],
-  providers: [StarsService],
+  providers: [HeroService],
   bootstrap: [AppComponent]
 })
-export class AppRoutingModule {}
-export class AppModule {}
+export class AppModule {
+}

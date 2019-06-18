@@ -2,12 +2,14 @@ h1 {
   font-size: 1.2em;
   color: #999;
   margin-bottom: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 h2 {
   font-size: 2em;
   margin-top: 0;
   padding-top: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 nav a {
@@ -17,6 +19,7 @@ nav a {
   display: inline-block;
   background-color: #eee;
   border-radius: 4px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 nav a:visited, a:link {
@@ -24,10 +27,10 @@ nav a:visited, a:link {
 }
 
 nav a:hover {
-  color: #039be5;
+  color: #00CD00;
   background-color: #CFD8DC;
 }
 
 nav a.active {
-  color: #039be5;
+  color: #00CD00;
 }

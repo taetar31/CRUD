@@ -1,7 +1,7 @@
 [class*='col-'] {
   float: left;
   padding-right: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 20px
 }
 
 [class*='col-']:last-of-type {
@@ -10,6 +10,7 @@
 
 a {
   text-decoration: none;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 *, *:after, *:before {
@@ -21,10 +22,13 @@ a {
 h3 {
   text-align: center;
   margin-bottom: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 40px;
 }
 
 h4 {
   position: relative;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .grid {
@@ -41,14 +45,14 @@ h4 {
   color: #eee;
   max-height: 120px;
   min-width: 120px;
-  background-color: #607D8B;
-  border-radius: 2px;
+  background-color: #00C957;
+  border-radius: 28px;
 }
 
 .module:hover {
   background-color: #EEE;
   cursor: pointer;
-  color: #607d8b;
+  color: #00C957;
 }
 
 .grid-pad {

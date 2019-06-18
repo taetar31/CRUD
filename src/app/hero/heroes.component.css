@@ -1,16 +1,29 @@
+h2 {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+label {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+span {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
 .selected {
   background-color: #CFD8DC !important;
   color: white;
 }
 
-.stars {
+.heroes {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
   width: 15em;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-.stars li {
+.heroes li {
   cursor: pointer;
   position: relative;
   left: 0;
@@ -21,28 +34,29 @@
   border-radius: 4px;
 }
 
-.stars li:hover {
+.heroes li:hover {
   color: #607D8B;
   background-color: #DDD;
   left: .1em;
 }
 
-.stars li.selected:hover {
+.heroes li.selected:hover {
   background-color: #BBD8DC !important;
   color: white;
 }
 
-.stars .text {
+.heroes .text {
   position: relative;
   top: -3px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-.stars .badge {
+.heroes .badge {
   display: inline-block;
   font-size: small;
   color: white;
   padding: 0.8em 0.7em 0 0.7em;
-  background-color: #607D8B;
+  background-color: #00C957;
   line-height: 1em;
   position: relative;
   left: -1px;

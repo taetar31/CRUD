@@ -3,61 +3,54 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError as observableThrowError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-import { Stars } from './stars';
+import { Hero } from './hero/hero';
 
 @Injectable()
-export class StarsService {
-  private starsUrl = 'app/stars'; // URL to web api
+export class HeroService {
+  private heroesUrl = 'app/heroes'; // URL to web api
 
   constructor(private http: HttpClient) {}
 
-  getStars() {
+  getHeroes() {
     return this.http
-      .get<Stars[]>(this.starsUrl)
+      .get<Hero[]>(this.heroesUrl)
       .pipe(map(data => data), catchError(this.handleError));
   }
 
-  getStarsId(id: number): Observable<Stars> {
-    return this.getStars().pipe(
-      map(stars => stars.find(star => star.id === id))
+  getHero(id: number): Observable<Hero> {
+    return this.getHeroes().pipe(
+      map(heroes => heroes.find(hero => hero.id === id))
     );
   }
 
-  save(stars: Stars) {
-    if (stars.id) {
-      return this.put(stars);
-    }
-    return this.post(stars);
-  }
-
-  delete(stars: Stars) {
+  delete(hero: Hero) {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    const url = `${this.starsUrl}/${stars.id}`;
+    const url = `${this.heroesUrl}/${hero.id}`;
 
-    return this.http.delete<Stars>(url).pipe(catchError(this.handleError));
+    return this.http.delete<Hero>(url).pipe(catchError(this.handleError));
   }
 
-  // Add new Stars
-  private post(stars: Stars) {
+  // Add new Hero
+  create(hero: string) {
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
 
     return this.http
-      .post<Stars>(this.starsUrl, stars)
+      .post<Hero>(this.heroesUrl, hero)
       .pipe(catchError(this.handleError));
   }
 
-  // Update existing Stars
-  private put(stars: Stars) {
+  // Update existing Hero
+  update({hero}: { hero: Hero }) {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    const url = `${this.starsUrl}/${stars.id}`;
+    const url = `${this.heroesUrl}/${hero.id}`;
 
-    return this.http.put<Stars>(url, stars).pipe(catchError(this.handleError));
+    return this.http.put<Hero>(url, hero).pipe(catchError(this.handleError));
   }
 
   private handleError(res: HttpErrorResponse | any) {
